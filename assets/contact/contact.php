@@ -1,27 +1,22 @@
 <?php
+  $receiving_email_address = 'ambroskipngeno@gmail.com';
 
-$name = $_POST['name'];
+  if( file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php' )) {
+    include( $php_email_form );
+  } else {
+    die( 'Unable to load the "PHP Email Form" Library!');
+  }
 
-$email = $_POST['email'];
+  $contact = new PHP_Email_Form;
+  $contact->ajax = true;
+  
+  $contact->to = $receiving_email_address;
+  $contact->from_name = $_POST['name'];
+  $contact->from_email = $_POST['email'];
+  $contact->subject = $_POST['subject'];
+  $contact->add_message( $_POST['name'], 'From');
+  $contact->add_message( $_POST['email'], 'Email');
+  $contact->add_message( $_POST['message'], 'Message', 10);
 
-$subject = $_POST['subject'];
-
-$message = $_POST['message'];
-
-
-$to = "ambroskipngeno@gmail.com";
-$headers = "From: ".$email . "\r\n";
-
-
-if(mail($to,$subject,$message,$headers)){
-    http_response_code(200);
-    
-echo json_encode("Your message has been sent. Thank you!");
-
-}
-else{
-    http_response_code(200);
-    echo json_encode(array("msg" => "Something went wrong, Try Again!"));
-
-};
-?>
+  echo $contact->send();
+?> 
