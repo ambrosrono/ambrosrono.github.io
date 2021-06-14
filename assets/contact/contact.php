@@ -1,22 +1,22 @@
-<?php
-  $receiving_email_address = 'ambroskipngeno@gmail.com';
-
-  if( file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php' )) {
-    include( $php_email_form );
-  } else {
-    die( 'Unable to load the "PHP Email Form" Library!');
-  }
-
-  $contact = new PHP_Email_Form;
-  $contact->ajax = true;
-  
-  $contact->to = $receiving_email_address;
-  $contact->from_name = $_POST['name'];
-  $contact->from_email = $_POST['email'];
-  $contact->subject = $_POST['subject'];
-  $contact->add_message( $_POST['name'], 'From');
-  $contact->add_message( $_POST['email'], 'Email');
-  $contact->add_message( $_POST['message'], 'Message', 10);
-
-  echo $contact->send();
-?> 
+<?php 
+function sanitize_my_email($field) {
+    $field = filter_var($field, FILTER_SANITIZE_EMAIL);
+    if (filter_var($field, FILTER_VALIDATE_EMAIL)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+$to_email = 'ambroskipngeno@gmail.com';
+$subject = 'Testing PHP Mail';
+$message = 'This mail is sent using the PHP mail ';
+$headers = 'From: noreply @ company. com';
+//check if the email address is invalid $secure_check
+$secure_check = sanitize_my_email($to_email);
+if ($secure_check == false) {
+    echo "Invalid input";
+} else { //send email 
+    mail($to_email, $subject, $message, $headers);
+    echo "This email is sent using PHP Mail";
+}
+?>
