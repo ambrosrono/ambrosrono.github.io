@@ -1387,52 +1387,68 @@
 
     
 
-    <!--=====================Github==================-->
-    <section id ="github" class="github">
+   <!-- ===================== GITHUB INFRASTRUCTURE SECTION ===================== -->
+<section id="github" class="github-section" aria-label="GitHub Contributions Analytics">
+  <div class="container">
+    
+    <!-- Section Heading -->
+    <h2 class="section-title">Open Source Analytics</h2>
+    <p class="section-subtitle">Real-time system contribution telemetry. Explore active repositories directly via my profile <a href="https://github.com/ambrosrono" target="_blank" aria-label="Open Ambros Rono GitHub Profile in a new tab">github.com/ambrosrono</a>.</p>
+
+    <!-- Two-Column Fluid Layout -->
+    <div class="github-split-layout">
       
-      <div class="container">
-        <div class="section-title" data-aos = "fade-up" data-aos-delay="100"> 
-        <h2>Github Stats</h2>
-        <p><i class="icofont-rounded-right"></i>View my contributions via github-stats. Visit profile <a href="https://github.com/ambrosrono">here</a></p>
-        <br>
-          
-            <!---- test : <img src = "https://github-readme-stats.vercel.app/api/wakatime?username=ambrosrono">----> 
-            </div>
-
-              <div class= "row">
-                <div class="col-lg-6"> 
-                  <!-- Include the library. -->
-              <script
-                src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"
-              ></script>
-
-              <link
-                 rel="stylesheet"
-                 href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css"
-              />
-
-              <div class="calendar">
-                  <!-- Loading stuff -->
-                  Loading the data just for you.
-              </div>
-
-              <script>
-                  GitHubCalendar(".calendar", "ambrosrono", { responsive: true });
-              </script>
-            
-                </div>
-
-                <div class="col-lg-4 col-md-2" >
-                  <p ><img src = "https://github-readme-stats.vercel.app/api?username=ambrosrono&show_icons=true&theme=dark"></p> 
-            </div>
-            
-                
-              </div>
-
+      <!-- Left Box: Interactive Contribution Calendar -->
+      <div class="github-glow-wrapper">
+        <div class="github-glow-bg"></div>
+        <div class="github-panel-card">
+          <div class="panel-header-tray">
+            <span class="panel-badge-type telemetry">Telemetry</span>
           </div>
+          <h3>Contribution Heatmap</h3>
           
-    </section>
-    <!-- ======= End GIthub ======= -->
+          <!-- GitHub Calendar Rendering Nodes -->
+          <div class="calendar-container">
+            <div class="calendar">
+              <!-- Loading Fallback State -->
+              <span style="color: #64748b; font-size: 0.9rem;">Initializing secure connection to GitHub API...</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Box: Production Language & System Metrics -->
+      <div class="github-glow-wrapper">
+        <div class="github-glow-bg"></div>
+        <div class="github-panel-card metrics-card">
+          <div class="panel-header-tray">
+            <span class="panel-badge-type analytics">Analytics</span>
+          </div>
+          <h3>System Metrics Profile</h3>
+          
+          <!-- GitHub Readme Stats API Card Placement -->
+          <div class="stats-card-wrapper">
+            <img src="https://vercel.app" 
+                 alt="Ambros Rono core repository development statistics engine" 
+                 class="stats-svg-img"
+                 loading="lazy" 
+                 decoding="async">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Required Script & Framework Call Injection Rules (Maintained from your source) -->
+<script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css" />
+<script>
+  // Initializes core calendar library with responsive orientation parameters active
+  GitHubCalendar(".calendar", "ambrosrono", { responsive: true });
+</script>
+ <!-- End Github Stats Section -->
 
     <!-- ======= Testimonials Section ======= -->
     <section id="testimonials" class="testimonials section-bg">
