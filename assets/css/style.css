@@ -708,7 +708,7 @@ section {
 .project-glow-wrapper:hover {
   transform: translateY(-8px);
 }
-
+\
 .glow-bg {
   position: absolute;
   inset: -2px;
