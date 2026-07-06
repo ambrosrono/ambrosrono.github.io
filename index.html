@@ -1509,78 +1509,66 @@
     <!-- End Testimonials Section -->
 
     <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-      <div class="container">
+    <!-- === SECURE CONTACT INTEGRATION SECTION === -->
+<section id="contact" class="contact-section" aria-label="Secure Contact Gateway">
+  <div class="contact-container">
+    
+    <!-- Section Header Layout -->
+    <h2 class="section-title">Initiate Connection</h2>
+    <p class="section-subtitle">Drop a secure transmission below. Direct communications route directly to my authenticated network inbox.</p>
 
-        <div class="section-title">
-          <h2>Contact</h2>
-          <p>If your organisation is looking to hire someone who can bring out of the box thinking to the team, or if you want to just say something nice, or you have any project in mind feel free to contact me using the form below.I do not disappoint!</p>
-        </div>
+    <!-- Animated Core Wrapper -->
+    <div class="contact-glow-wrapper">
+      <div class="contact-glow-bg"></div>
+      
+      <!-- Contact Form Canvas (Using Web3Forms Secure Gateway API) -->
+      <form action="https://web3forms.com" method="POST" class="contact-form" id="networkForm">
+        
+        <!-- Replace YOUR_ACCESS_KEY_HERE with the key sent to your inbox -->
+        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+        <input type="hidden" name="subject" value="New Secure Portfolio Transmission">
+        <input type="checkbox" name="botcheck" class="honeypot-anti-spam" style="display: none;">
 
-        <div class="row" data-aos="fade-in">
-
-          <div class="col-lg-5 d-flex align-items-stretch">
-            <div class="info">
-              <div class="address">
-                <i class="icofont-google-map"></i>
-                <h4>Location:</h4>
-                <p>Nakuru, Kenya</p>
-              </div>
-
-              <div class="email">
-                <i class="icofont-envelope"></i>
-                <h4>Email:</h4>
-                <p>ambroskipngeno@gmail.com</p>
-              </div>
-
-              <div class="phone">
-                <i class="icofont-phone"></i>
-                <h4>Call:</h4>
-                <p>+254 702 545 404</p>
-              </div>
-
-              <iframe
-                src="https://www.google.com/maps/place/Kabarak+University+Nakuru+Town+Campus,+Nakuru/@-0.2782671,36.0583317,16z/data=!4m6!1m3!3m2!1s0x18298da5768e0781:0xfdaa3a2d97607cde!2sKabarak+University+Nakuru+Town+Campus,+Nakuru!3m1!1s0x18298da5768e0781:0xfdaa3a2d97607cde"
-                frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
-            </div>
-
+        <!-- 3-Column Responsive Input Grid -->
+        <div class="form-grid">
+          
+          <div class="form-group">
+            <label for="name">Identity / Organization</label>
+            <input type="text" id="name" name="name" required placeholder="First name">
           </div>
 
-           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="assets/contact/contact.php" method="post" role="form" class="php-email-form">
-              <div class="row">
-                <div class="form-group col-md-6">
-                  <label for="name">Your Name</label>
-                  <input type="text" name="name" class="form-control" id="name" required>
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="name">Your Email</label>
-                  <input type="email" class="form-control" name="email" id="email" required>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="name">Subject</label>
-                <input type="text" class="form-control" name="subject" id="subject" required>
-              </div>
-              <div class="form-group">
-                <label for="name">Message</label>
-                <textarea class="form-control" name="message" rows="10" required></textarea>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
+          <!-- Input Slot: Communication Return Pathway -->
+          <div class="form-group">
+            <label for="email">Return Channel Address</label>
+            <input type="email" id="email" name="email" required placeholder="name@organization.com">
           </div>
 
+          <!-- Input Slot: Direct Phone Contact -->
+          <div class="form-group">
+            <label for="phone">Phone Contact</label>
+            <input type="tel" id="phone" name="phone" placeholder="e.g., +254 700 000 000">
+          </div>
         </div>
 
-      </div>
-    </section>
-  <script src="https://apps.elfsight.com/p/platform.js" defer></script>
-<div class="elfsight-app-7ee9235e-9612-48e1-8008-b8cdd4d2726a"></div>
+        <!-- Input Slot: Comprehensive Message Body Payload -->
+        <div class="form-group" style="margin-top: 20px;">
+          <label for="message">Transmission Content Payload</label>
+          <textarea id="message" name="message" rows="5" required placeholder="Detail your project specifications, operational timelines, or role profile requirements..."></textarea>
+        </div>
+
+        <!-- Submission Pipeline Activation Control -->
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary submit-btn">
+            <span>Dispatch Transmission</span> &rarr;
+          </button>
+        </div>
+        
+      </form>
+    </div>
+
+  </div>
+</section>
+
   <!-- End Contact Section -->
 
   </main><!-- End #main -->
