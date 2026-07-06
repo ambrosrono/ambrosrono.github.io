@@ -926,6 +926,163 @@ section {
 
 
 
+
+/* ==========================================================================
+   TECHNICAL PROFICIENCY MATRIX ENGINE
+   ========================================================================== */
+
+.skills-matrix-section {
+  padding: 80px 20px;
+  background-color: #0b0f19;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  border-top: 1px solid #1f2937;
+}
+
+.skills-matrix-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 4-Column Grid Setup with fluid break safeguards */
+.matrix-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+/* Active Hover Tracker Boundary Wrappers */
+.matrix-glow-wrapper {
+  position: relative;
+  border-radius: 16px;
+  padding: 1px;
+  background: #1f2937;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.matrix-glow-wrapper:hover {
+  transform: translateY(-4px);
+}
+
+.matrix-glow-bg {
+  position: absolute;
+  inset: -1px;
+  border-radius: 17px;
+  background: linear-gradient(90deg, #2563eb, #06b6d4, #2563eb);
+  background-size: 400% 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.matrix-glow-wrapper:hover .matrix-glow-bg {
+  opacity: 1;
+  animation: matrixNeonFlow 3s linear infinite;
+}
+
+@keyframes matrixNeonFlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 400% 50%; }
+}
+
+/* Base Panel Core Container */
+.matrix-panel-card {
+  position: relative;
+  background: #111827;
+  border-radius: 16px;
+  padding: 24px;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #1f2937;
+}
+
+.matrix-panel-card h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 24px;
+}
+
+/* Micro Header Classification Badges */
+.panel-header-tray {
+  margin-bottom: 12px;
+  display: flex;
+}
+
+.matrix-badge {
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.matrix-badge.styling { background: rgba(6, 182, 212, 0.1); color: #06b6d4; border: 1px solid rgba(6, 182, 212, 0.2); }
+.matrix-badge.development { background: rgba(37, 99, 235, 0.1); color: #3b82f6; border: 1px solid rgba(37, 99, 235, 0.2); }
+.matrix-badge.discovery { background: rgba(16, 185, 129, 0.1); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.2); }
+.matrix-badge.security { background: rgba(239, 68, 68, 0.1); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.2); }
+
+/* Unified Progress Meter Track Components */
+.skills-ladder {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.skill-meter-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.meter-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: #94a3b8;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.meter-info .percentage {
+  color: #3b82f6;
+  font-weight: 700;
+}
+
+/* Outer Empty Core Pipeline Track */
+.meter-track {
+  width: 100%;
+  height: 6px;
+  background: #0b0f19;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid #1f2937;
+}
+
+/* Inner Liquid Fluid Color Bar Fills */
+.meter-fill {
+  height: 100%;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #2563eb, #3b82f6);
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.5);
+  transform-origin: left;
+  animation: meterLoadGate 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Transitions from Core Blue to Electric Cyan on wrapper card hover events */
+.matrix-glow-wrapper:hover .meter-fill {
+  background: linear-gradient(90deg, #3b82f6, #06b6d4);
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.6);
+  transition: background 0.3s ease;
+}
+
+@keyframes meterLoadGate {
+  0% { transform: scaleX(0); }
+  100% { transform: scaleX(1); }
+}
+
+
 /* ==========================================================================
    ACADEMIC FOUNDATIONS & TIMELINE SECTION
    ========================================================================== */
