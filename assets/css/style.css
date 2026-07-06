@@ -1052,6 +1052,271 @@ section {
 
 
 
+/* ==========================================================================
+   UNIFIED TWO-COLUMN SPLIT SECTION (ACADEMICS & CERTIFICATIONS)
+   ========================================================================== */
+
+.split-credentials-section {
+  padding: 80px 20px;
+  background-color: #0b0f19;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  border-top: 1px solid #1f2937;
+}
+
+.split-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 64px;
+}
+
+.split-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.column-title {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.column-subtitle {
+  font-size: 0.95rem;
+  color: #94a3b8;
+  margin-bottom: 40px;
+}
+
+/* LEFT COLUMN: Education Timeline Matrix */
+.education-timeline {
+  position: relative;
+  padding-left: 28px;
+  border-left: 2px solid #1f2937;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 36px;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -38px;
+  top: 6px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #111827;
+  border: 3px solid #2563eb;
+  transition: all 0.4s ease;
+}
+
+.timeline-item:hover .timeline-marker {
+  background: #2563eb;
+  box-shadow: 0 0 10px #2563eb;
+  transform: scale(1.1);
+}
+
+.timeline-content {
+  background: #111827;
+  border: 1px solid #1f2937;
+  border-radius: 12px;
+  padding: 20px;
+  transition: border-color 0.3s ease;
+}
+
+.timeline-item:hover .timeline-content {
+  border-color: #3b82f6;
+}
+
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.academic-period {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #3b82f6;
+}
+
+/* Distinct Academic Grade Color Systems */
+.credential-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.credential-badge.grade-distinction {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.credential-badge.grade-credit {
+  background-color: rgba(6, 182, 212, 0.1);
+  color: #06b6d4;
+  border: 1px solid rgba(6, 182, 212, 0.2);
+}
+
+.timeline-content h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.institution-name {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  margin-bottom: 12px;
+}
+
+.academic-focus {
+  font-size: 0.85rem;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+.timeline-item:hover .academic-focus {
+  color: #94a3b8;
+}
+
+/* RIGHT COLUMN: Certification Grid */
+.split-cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.cert-glow-wrapper {
+  position: relative;
+  border-radius: 10px;
+  padding: 1px;
+  transition: transform 0.3s ease;
+}
+
+.cert-glow-wrapper:hover {
+  transform: translateY(-3px);
+}
+
+.cert-glow-bg {
+  position: absolute;
+  inset: -1px;
+  border-radius: 11px;
+  background: linear-gradient(90deg, #2563eb, #06b6d4, #2563eb);
+  background-size: 400% 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cert-glow-wrapper:hover .cert-glow-bg {
+  opacity: 1;
+  animation: splitNeonFlow 2.5s linear infinite;
+}
+
+@keyframes splitNeonFlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 400% 50%; }
+}
+
+.cert-card {
+  position: relative;
+  background: #111827;
+  border-radius: 10px;
+  padding: 16px;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #1f2937;
+}
+
+.cert-icon-tray {
+  margin-bottom: 12px;
+  display: flex;
+}
+
+.cert-badge-type {
+  font-size: 0.6rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.cert-badge-type.security { background: rgba(239, 68, 68, 0.1); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.15); }
+.cert-badge-type.cloud { background: rgba(16, 185, 129, 0.1); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.15); }
+.cert-badge-type.development { background: rgba(37, 99, 235, 0.1); color: #3b82f6; border: 1px solid rgba(37, 99, 235, 0.15); }
+.cert-badge-type.architecture { background: rgba(139, 92, 246, 0.1); color: #8b5cf6; border: 1px solid rgba(139, 92, 246, 0.15); }
+.cert-badge-type.analytics { background: rgba(6, 182, 212, 0.1); color: #06b6d4; border: 1px solid rgba(6, 182, 212, 0.15); }
+
+.cert-card h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.3;
+  margin-bottom: 6px;
+}
+
+.cert-issuer {
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+/* Responsive Structural Wrapping */
+@media (max-width: 868px) {
+  .split-container {
+    flex-direction: column;
+    gap: 48px;
+  }
+}
+/* Inline Link Framework for Certificate Cards */
+.cert-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Pushes button anchors uniformly to the baseline */
+}
+
+.cert-action-row {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px dashed #1f2937; /* Clean dividing track */
+}
+
+.cert-link-btn {
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #3b82f6;
+  display: inline-block;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.cert-glow-wrapper:hover .cert-link-btn {
+  color: #06b6d4; /* Transitions from core corporate blue to vibrant cyber cyan */
+}
+
+.cert-link-btn:hover {
+  transform: translateX(4px); /* Interactive modern right-shift slide bump */
+}
+
+
+
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
